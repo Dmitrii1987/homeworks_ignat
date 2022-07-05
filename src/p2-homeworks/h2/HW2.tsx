@@ -3,7 +3,11 @@ import Affairs from './Affairs'
 
 // types
 export type AffairPriorityType = 'high' | 'low' | 'middle' // need to fix any
-export type AffairType = any // need to fix any
+export type AffairType = {
+    _id:number
+    name:string
+    priority:'high' | 'low' | 'middle'
+} // need to fix any
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
@@ -25,7 +29,7 @@ export const deleteAffair = (affairs: any, _id: number): any => { // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<AffairType>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState<AffairType>() // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)

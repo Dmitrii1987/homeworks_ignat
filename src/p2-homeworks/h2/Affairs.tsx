@@ -5,7 +5,7 @@ import {AffairType} from './HW2'
 type AffairsPropsType = { // need to fix any
     data: Array<AffairType>
     setFilter: any
-    deleteAffairCallback: (_id:number)=>void
+    deleteAffairCallback: any
 }
 
 function Affairs(props: AffairsPropsType) {
