@@ -10,12 +10,14 @@ type AffairPropsType = {
 
 function Affair(props:AffairPropsType) {
     const deleteCallback = () => {props.deleteAffairCallback(props.affair._id)}// need to fix
+    const priorityClass= s.item + ' ' + s[props.affair.priority]
 
     return (
-        <div>
-            // вывести название дела и приоритет
-
-            <button onClick={deleteCallback}>X</button>
+        <div className={s.affair}>
+            <div className={s.item} >{props.affair.name}</div>
+            <div className={priorityClass}>[{props.affair.priority}]</div>
+             
+            <button onClick={deleteCallback} className={s.item + ' ' + s.button}>X</button>
         </div>
     )
 }

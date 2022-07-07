@@ -1,8 +1,8 @@
 .button {
     margin: 10px;
     width: 60px;
-    background:#565656 ;
-    color: #737373;
+    background:yellowgreen ;
+    color: rebeccapurple;
     outline: none;
 }
 
@@ -11,11 +11,11 @@
 }
 
 .button:active {
-    background: #565656;
+    background: goldenrod;
 }
 
 .active {
-    background: #343434;
+    background: #cd1117;
 }
 
 .affair {
@@ -32,7 +32,7 @@
 }
 
 .middle {
-    color: orange;
+    color: rgba(157, 0, 255, 0.264);
 }
 
 .low {
