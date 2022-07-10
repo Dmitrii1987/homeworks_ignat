@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
+    name: string // need to fix any
     setNameCallback: any // need to fix any
-    addUser: any // need to fix any
+    addUser: (event:MouseEventHandler<HTMLButtonElement>)=> void // need to fix any
     error: string // need to fix any
     totalUsers: number // need to fix any
 }
@@ -19,7 +19,7 @@ const Greeting: React.FC<GreetingPropsType> = (
         <div>
             <input value={name} onChange={setNameCallback} className={inputClass}/>
             <span>{error}</span>
-            <button onClick={addUser}>add</button>
+            <button onClick={(event)=>addUser}>add</button>
             <span>{totalUsers}</span>
         </div>
     )
