@@ -3,7 +3,7 @@ import Greeting from './Greeting'
 import { UserType } from './HW3'
 
 type GreetingContainerPropsType = {
-    users: UserType[] // need to fix any
+    users: Array<UserType> // need to fix any
     addUserCallback: (name:string)=> void // need to fix any
 }
 
@@ -30,12 +30,12 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const addUser = () => {
         addUserCallback(name)
         alert(`Hello ${name} !`) // need to fix
+        setName('')
     }
 
     const onEnter = (e:KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && name) {
             addUser()
-            setName('')
         }
     }
 
@@ -46,6 +46,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             name={name}
             setNameCallback={setNameCallback}
             addUser={addUser}
+            onEnter={onEnter}
             error={error}
             totalUsers={totalUsers}
         />
